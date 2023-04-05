@@ -18,3 +18,5 @@ def returnTrAndEngWorldCOunt(tr_word, eng_world):
     return len(tr), len(eng)
 
 
+
+
