@@ -1,0 +1,5 @@
+{
+    "username":"postgrekullanıcı adınız",
+    "password":"postgreparolanız",
+    "db_name":"Veritabanı adınız"
+}

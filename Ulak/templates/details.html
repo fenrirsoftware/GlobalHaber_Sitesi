@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{value.trcontent}}</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="{{url_for('index')}}">Ulak</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+            aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{{url_for('index')}}">Ana Sayfa</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="https://github.com/Ugurc4lskn" , target="_blank">Github</a>
+                </li>
+
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container my-4">
+        <div class="row">
+            <div class="col-md-8">
+                <h1 class="mb-4" id="title">{{value.trtitle}}</h1>
+                <img src="{{value.imageurl}}" class="mb-4">
+                <p id="changeLanguage">{{value.trcontent}}</p>
+
+            </div>
+            <div class="col-md-4">
+                <div class="card mb-4">
+                    <div class="card-body">
+                        <h5 class="card-title">İstatistikler</h5>
+                        <ul class="list-unstyled">
+                            <li><strong>Kaynak </strong> {{value.domain_name}}</li>
+                            <li><strong>Türkçe Kelime Sayısı </strong> {{türkceKelime}}</li>
+                            <li><strong>İngilizce Kelime Sayısı </strong> {{ingilizceKelime}}</li>
+                            <li><strong>Tarih </strong> {{value.datetime}}</li>
+                            <li><strong>Orjinal İçerik </strong> <a href="{{value.url}}">Orjinal</a></li>
+                        </ul>
+                        <a href="#" class="btn btn-primary" onclick="turkceIcerik()">Türkçe</a>
+                        <a href="#" class="btn btn-primary" onclick="ingilizceIcerik()">İngilizce</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="text-white text-center py-3">
+        <p>Ulak </p>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+
+</body>
+
+
+</html>
+
+
+<script>
+    function turkceIcerik() {
+        var element = document.getElementById("changeLanguage");
+        element.innerHTML = "{{value.trcontent}}";
+        var element = document.getElementById("title");
+        element.innerHTML = "{{value.trtitle}}";
+
+    }
+
+    function ingilizceIcerik() {
+        var element = document.getElementById("changeLanguage");
+        element.innerHTML = "{{value.content}}";
+        var element = document.getElementById("title");
+        element.innerHTML = "{{value.title}}";
+    }
+</script>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #0D1117;
+        color: #fff;
+    }
+
+    .navbar {
+        background-color: #0d1117ad;
+    }
+
+    .navbar-brand {
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .navbar-nav .nav-link {
+        color: #fff;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-weight: bold;
+        color: #fff;
+    }
+
+    .container {
+        background-color: #1a2433;
+        padding: 20px;
+        border-radius: 5px;
+        box-shadow: 0 0 20px rgba(22, 32, 48, 0.1);
+    }
+
+    .card {
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        background-color: #0b121bc0;
+        color: #fff;
+    }
+
+    .card-title {
+        color: #fff;
+    }
+
+    .card-body {
+        border: none;
+    }
+
+    .card-body ul li {
+        color: #fff;
+    }
+
+    .card-body a {
+        color: #fff;
+    }
+
+    .btn-primary {
+        background-color: #26405c;
+        border-color: #000000;
+        border-radius: 10px;
+    }
+
+
+    .btn-primary:hover,
+    .btn-primary:focus,
+    .btn-primary:active {
+        background-color: #080f18;
+        border-color: #000000;
+    }
+
+    .btn-secondary:hover,
+    .btn-secondary:focus,
+    .btn-secondary:active {
+        background-color: #5a6268;
+        border-color: #545b62;
+    }
+
+    footer {
+        background-color: #1d273542;
+        color: #fff;
+    }
+
+    footer p {
+        margin: 0;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    @media (max-width: 576px) {
+        .navbar-brand {
+            font-size: 1.5rem;
+        }
+    }
+</style>
