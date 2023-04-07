@@ -1,4 +1,4 @@
-Ulak | Global Haber Sitesi
+Ulak | Global Teknoloji Haber Sitesi
 
 ## Ulak Nedir ?
 
